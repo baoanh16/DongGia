@@ -1,0 +1,10 @@
+extends _layout.pug
+
+block var
+	- var title = "Product Detail"
+	- var name = "product-detail"
+	- var bodyClass = "product-detail-page"
+
+block main
+	include ../components/breadcrumb/index.pug
+	include ../components/product/detail.pug

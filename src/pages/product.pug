@@ -1,0 +1,11 @@
+extends _layout.pug
+
+block var
+	- var title = "Product"
+	- var name = "product"
+	- var bodyClass = "product-page"
+
+block main
+	include ../components/breadcrumb/index.pug
+	+PageBanner("./img/banner/b_2.jpg")
+	include ../components/product/list.pug

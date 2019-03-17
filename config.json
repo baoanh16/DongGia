@@ -1,0 +1,18 @@
+{
+	"font": [
+		"bower_components/mdi/fonts/*",
+		"bower_components/font-awesome/webfonts/*",
+		"bower_components/linearicons/dist/web-font/fonts/*"
+	],
+	"globalJs": [
+		"./bower_components/jquery/dist/jquery.min.js",
+		"./src/plugins/lazysizes.min.js",
+		"./bower_components/swiper/dist/js/swiper.min.js",
+		"./bower_components/isotope-layout/dist/isotope.pkgd.min.js"
+	],
+	"globalCss": [
+		"./bower_components/swiper/dist/css/swiper.min.css",
+		"./src/plugins/font.css",
+		"./src/plugins/grid.css"
+	]
+}
