@@ -144,9 +144,9 @@ $(document).ready(function () {
 			data: { isAjax: true },
 			success: function (data) {
 				let newHtml = $($(data).find('.grid').html()).filter('.grid-item')
-				let newUrl = $($(data).find('.viewmore').html()).attr('href')
 				$isoGrid.isotope('insert', newHtml)
-				$('.gallery .viewmore a').attr('href', newUrl + 'asdasd')
+				let newUrl = $($(data).find('.viewmore').html()).attr('href')
+				$('.gallery .viewmore a').attr('href', newUrl)
 			},
 		})
 	})
