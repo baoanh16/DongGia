@@ -25,6 +25,24 @@ header
 	.menu-wrapper
 		flex-grow: 1
 		flex-basis: 0
+		>.sub-menu
+			margin-bottom: 8px
+			.Module-262
+				.ModuleContent
+					display: flex
+					@media (max-width: 991.98px)
+						flex-direction: column
+						a
+							flex-wrap: wrap
+							justify-content: center
+							height: 90px
+							padding: 8px
+							border-bottom: 1px solid #fff
+							text-align: center
+							color: white
+							span
+								color: inherit
+								font-weight: 400
 	.sub-menu,.main-menu
 		display: flex
 		justify-content: flex-end
@@ -33,10 +51,9 @@ header
 		font-size: 13px
 		font-weight: 400
 		text-transform: uppercase
-		margin-bottom: 8px
 		*
 			color: darken(white,40%)
-		>a
+		a
 			display: flex
 			align-items: center
 			text-decoration: none
@@ -69,6 +86,7 @@ header
 					span:not(.mdi)
 						color: #6a4b2d
 		.language
+			z-index: 1
 			position: relative
 			.current
 				width: 80px

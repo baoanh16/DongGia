@@ -1,0 +1,682 @@
+.checkout
+	padding: 30px 0
+	@media (min-width: 768px)
+		padding: 45px 0
+	@media (min-width: 992px)
+		padding: 60px 0
+	.product-other
+		margin-top: 60px
+		.swiper-container
+			padding: 10px
+			margin: -10px
+	.cart-title
+		margin-bottom: .5rem
+		h3
+			font-size: 15px
+			font-weight: 700
+			color: lighten(black, 20%)
+			text-transform: uppercase
+			span:first-child
+				margin-right: 1rem
+				color: lighten(map-get($mau, main),10%)
+	.cart-table-list
+		.quantity
+			display: flex
+			background-color: darken(white,4%)
+			border-radius: 15px
+			max-width: 90px
+			margin: auto
+			span
+				flex: 0 0 30px
+				height: 30px
+				display: flex
+				justify-content: center
+				align-items: center
+				cursor: pointer
+				&::selection
+					background: none
+			input
+				flex: 0 0 30px
+				max-width: 30px
+				height: 30px
+				border: 0
+				background: none
+				text-align: center
+				&::selection
+					background: none
+				&:focus
+					outline: 0
+		table
+			width: 100%
+			border: 3px solid darken(white,3%)
+			thead
+				@media (max-width: 768px)
+					display: none
+				tr
+					background-color: darken(white,5%)
+					height: 3rem
+					border-bottom: 1px solid darken(white,15%)
+					th
+						vertical-align: middle
+						font-size: 15px
+						font-weight: 400
+						&:first-child
+							width: calc(100% / 3)
+							text-align: left
+							padding-left: 1rem
+						&:nth-child(2)
+							width: calc(100% / 4)
+							text-align: center
+						&:nth-child(3)
+							width: calc(100% / 6)
+							text-align: center
+						&:last-child
+							text-align: right
+							padding-right: 21px
+			tbody
+				tr
+					height: 100px
+					td
+						vertical-align: middle
+						font-size: 15px
+						font-weight: 400
+						&:first-child
+							text-align: left
+							padding-left: 1rem
+							position: relative
+							width: 45%
+						&:nth-child(2)
+							text-align: center
+						&:nth-child(3)
+							text-align: center
+						&:last-child
+							text-align: right
+							padding-right: 21px
+							color: #f30a0a
+					+ tr
+						border-top: 1px solid darken(white,15%)
+					@media (max-width: 768px)
+						padding-top: 20px
+						td
+							&:first-child
+								margin-top: 1rem
+								padding-left: 0
+								width: 100%
+								vertical-align: middle
+								padding-right: 1rem
+							&:nth-child(2), &:nth-child(3), &:last-child
+								float: right
+								width: 100px
+								text-align: right
+								padding-right: 15px
+								margin-top: .5rem
+							&:nth-child(2)
+								margin-top: 1rem
+					figure
+						display: inline-flex
+						align-items: center
+						margin-bottom: 0
+						img
+							max-width: 60px
+						figcaption
+							h4, p
+								font-size: 13px
+								font-weight: 400
+								color: lighten(black,20%)
+					.removeproduct
+						display: inline-flex
+						position: absolute
+						right: 20px
+						top: 50%
+						transform: translateY(-50%)
+						width: 25px
+						height: 25px
+						border-radius: 50%
+						background: map-get($mau, main)
+						color: white
+						display: flex
+						justify-content: center
+						align-items: center
+						cursor: pointer
+	.cart-total-price
+		margin-top: 1rem
+		text-align: right
+		p
+			font-size: 15px
+			font-weight: 400
+			span.price-temp
+				font-size: 20px
+				font-weight: 700
+				color: #ff0000
+	.cart-button-checkout
+		display: flex
+		flex-wrap: wrap
+		margin-top: 1rem
+		flex-direction: column
+		align-items: center
+		@media (min-width: 480px)
+			flex-direction: row
+			justify-content: space-between
+		.btn
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 35px
+			max-width: 180px
+			width: 100%
+			line-height: 1
+			cursor: pointer
+			text-decoration: none
+			span
+				font-size: 14px
+				// &:first-child
+					// margin-right: .5rem
+				&.mdi
+					font-size: 22px
+			&.btn-prev
+				margin-bottom: 20px
+				background: darken(white, 7%)
+				@media (min-width: 480px)
+					margin-bottom: 0
+				span
+					color: lighten(black,20%)
+			&.btn-next
+				background: map-get($mau, main)
+				span
+					color: white
+	.cart-order-summary
+		overflow: hidden
+		border-radius: 5px
+		border: 1px solid lighten(black,85%)
+		margin-bottom: 30px
+		@media (min-width: 992px)
+			margin-bottom: 0
+		table
+			width: 100%
+			tr
+				td
+					padding: 1rem 10px
+					figure
+						display: flex
+						align-items: center
+						margin-bottom: 0
+						a
+							flex: 0 0 70px
+							max-width: 70px
+							border: 1px solid lighten(black,85%)
+							margin-right: 1rem
+							img
+								width: 100%
+						figcaption
+							h4,p
+								text-transform: uppercase
+								font-weight: 500
+								font-size: 12px
+								@media (min-width: 576px)
+									font-size: 13px
+								a
+									margin-right: 0
+									border: 0
+									color: lighten(black,20%)
+					&:last-child
+						text-align: right
+						width: 100px
+						font-size: 12px
+						@media (min-width: 576px)
+							font-size: 13px
+							width: 120px
+						p
+							font-weight: 500
+							font-size: 12px
+							@media (min-width: 576px)
+								font-size: 13px
+							&.total-price
+								color: map-get($mau, extra)
+				+ tr
+					border-top: 1px solid darken(white,8%)
+				&.amount
+					td
+						padding-top: .65rem
+						padding-bottom: .65rem
+						font-weight: 600
+						&:first-child
+							color: lighten(black,20%)
+					&.sale
+						td
+							&:first-child
+								span
+									margin-left: 3rem
+									color: darken(white, 40%)
+							&:last-child
+								color: map-get($mau, extra)
+					&.price
+						td
+							&:last-child
+								color: #ff0000
+					&.shipping
+						td
+							&:last-child
+								color: map-get($mau, extra)
+
+.checkout
+	&.checkout-method
+		margin-bottom: 30px
+		@media (min-width: 992px)
+			margin-bottom: 60px
+	&.checkout-address-edit
+		padding-bottom: 30px
+		@media (min-width: 992px)
+			padding-bottom: 60px
+		.form-group
+			display: flex
+			flex-wrap: wrap
+			margin-bottom: 1rem
+			span
+				font-size: 11px
+				font-weight: 400
+				color: lighten(black,20%)
+			label
+				flex: 0 0 100%
+				font-size: 12px
+				font-weight: 400
+				color: lighten(black,20%)
+			input,select,textarea
+				background-color: #fff
+				background-clip: padding-box
+				border: 1px solid #ced4da
+				border-radius: 5px
+				width: 100%
+				font-size: 12px
+				&:focus
+					outline: none
+					box-shadow: 0 0 .25rem map-get($mau, main)
+					border-color: map-get($mau, main)
+			textarea
+				height: 55px
+				padding: .5rem .75rem
+			input,select
+				height: 40px
+				padding: 0 .75rem
+				option
+					color: lighten(black,20%)
+			@media (min-width: 576px)
+				label
+					flex: 0 0 180px
+				input, select, textarea
+					flex: 0 0 calc(100% - 180px)
+				span
+					margin-left: auto
+					align-self: center
+			@media (min-width: 992px)
+				&.form-phone
+					input
+						flex: 0 0 calc(50% - 90px)
+					span
+						flex: 0 0 calc(50% - 105px)
+						order: 3
+					label.error
+						margin-left: calc(50% - 90px)
+						order: 4
+			input.error
+				border: 1px solid red
+				box-shadow: 0 0 .25rem red
+			label.error
+				font-family: 'Montserrat',sans-serif
+				top: 42px
+				right: 10px
+				color: red
+				font-weight: 400
+				width: 100%
+				font-size: 11px
+				margin-top: .5rem
+				margin-left: auto
+				text-align: right
+				&:before
+					font-weight: 900
+					margin-right: .325rem
+					content: '\f06a'
+					font-family: 'Font Awesome 5 Free'
+		.check-group
+			display: flex
+			margin-bottom: 1rem
+			input
+				margin-right: .75rem
+				display: none
+			label
+				flex: 0 0 100%
+				font-size: 12px
+				font-weight: 400
+				color: lighten(black,20%)
+				position: relative
+				padding-left: 2rem
+				&:before
+					width: 12px
+					height: 12px
+					position: absolute
+					top: 2px
+					left: 0
+					content: '\f00c'
+					font-family: 'Font Awesome 5 Free'
+					font-weight: 900
+					border: 0
+					font-size: 9px
+					color: lighten(black,20%)
+					border: 1px solid darken(white,15%)
+					display: flex
+					justify-content: center
+					align-items: center
+				&.active
+					&:before
+						content: ''
+		.cart-address
+			background-color: darken(white, 3%)
+			border-radius: 5px
+			padding: 15px
+			margin-bottom: 1rem
+			@media (min-width: 576px)
+				padding-left: 30px
+				hr
+					max-width: calc(100% - 180px)
+					flex: 0 0 calc(100% - 180px)
+					margin: 1.5rem 0 1.5rem auto
+					border-top: 1px solid darken(white,12%)
+			.address-edit-other
+				display: none
+		.cart-coupon
+			background-color: darken(white, 3%)
+			border-radius: 5px
+			padding: 15px
+			margin-bottom: 2.5rem
+			@media (min-width: 576px)
+				padding-left: 30px
+			p
+				font-size: 12px
+				font-weight: 400
+				color: lighten(black,20%)
+				margin-bottom: .5rem
+			.desc
+				font-size: 12px
+				color: lighten(black,20%)
+				i
+					color: lighten(black,40%)
+					margin-bottom: .5rem
+					display: block
+			.form-group
+				position: relative
+				max-width: 300px
+				input
+					flex: 0 0 100%
+					&:focus
+						outline: none
+						box-shadow: 0 0 .25rem map-get($mau, main)
+						border-color: map-get($mau, main)
+				button
+					position: absolute
+					right: 0
+					top: 0
+					height: 40px
+					padding: 0 1.25rem
+					background: map-get($mau, main)
+					border: 0
+					outline: 0
+					border-top-right-radius: 5px
+					border-bottom-right-radius: 5px
+					color: white
+		.cart-bill-export
+			input
+				display: none
+			label
+				position: relative
+				font-size: 15px
+				padding-left: 2rem
+				&:before
+					content: ''
+					width: 14px
+					height: 14px
+					position: absolute
+					top: 4px
+					left: 0
+					color: map-get($mau, main)
+					border: 1px solid map-get($mau, main)
+					border-radius: 3px
+				&.active
+					&:before
+						content: '\f14a'
+						font-family: 'Font Awesome 5 Free'
+						border: 0
+						font-weight: 900
+		.cart-bill-info
+			display: none
+			background-color: darken(white, 3%)
+			border-radius: 5px
+			padding: 15px
+			margin-bottom: 1rem
+			@media (min-width: 576px)
+				padding-left: 30px
+			p
+				font-size: 12px
+				font-weight: 400
+				color: lighten(black,20%)
+				margin-bottom: 1rem
+.checkout-address-edit
+	.Module-198
+		@media (max-width: 991.98px)
+			margin-bottom: 30px
+.cart-login
+	overflow: hidden
+	@media (max-width: 991.98px)
+		margin-bottom: 30px
+	@media (max-width: 576px)
+		padding: 10px 15px
+		font-size: 14px
+	.login-form
+		width: 100%
+		max-width: 500px
+		margin: 0 auto
+		ul
+			padding-left: 0
+			list-style-type: none
+			margin-bottom: 0
+		.select-group
+			ul
+				margin-bottom: 10px
+				li
+					span
+						input
+							margin-right: .3rem
+		.module-title
+			font-size: 15px
+			font-weight: 500
+			margin-bottom: 10px
+			@media (max-width: 576px)
+				margin-bottom: 10px
+		.form-group
+			margin-bottom: 10px
+			@media (max-width: 576px)
+				margin-bottom: 10px
+			input
+				width: 100%
+				border: 1px solid darken(white,20%)
+				padding: 0px 15px
+				line-height: 36px
+				font-size: 15px
+				transition: all ease-out .3s
+				// +bor-rad(3px)
+				@media (max-width: 576px)
+					line-height: 30px
+					font-size: 14px
+				&:hover, &:active, &:focus
+					border-color: darken(white,40%)
+			a
+				font-size: 14px
+				color: lighten(black,30%)
+				+ a
+					margin-left: 1rem
+		.checkout-guest
+			.guest-message
+				display: none
+		.btn-continue 
+			display: block
+			float: none
+			text-align: center
+			margin: 20px 0 0
+			width: 100%
+			background: map-get($mau, main)
+			border: 0
+			height: 40px
+			font-weight: 400
+			color: white
+			text-transform: uppercase
+			@media (max-width: 576px)
+				margin-top: 10px
+		
+.checkout
+	&.cart-payment-method
+		padding: 3rem 10px
+		.cart-payment-method
+			box-shadow: 0 0 5px rgba(0,0,0,.1)
+			background: white
+			padding: 20px
+			margin-bottom: 3rem
+			border-radius: 5px
+		.method
+			@media (min-width: 576px)
+				padding-left: 2rem
+			+ .method
+				margin-top: 14px
+			input
+				display: none
+			label
+				// background: white
+				display: flex
+				cursor: pointer
+				flex-direction: column
+				margin-bottom: 0
+				border: 1px solid darken(white,15%)
+				figure
+					display: flex
+					margin: 0
+					.imgbox
+						flex: 0 0 80px
+						height: 100%
+						border-right: 1px solid darken(white,15%)
+						img
+							width: 100%
+					figcaption
+						flex-grow: 1
+						flex-basis: 0
+						padding: 0 15px
+						h4
+							font-size: 15px
+							font-weight: 500
+							color: lighten(black,20%)
+						p
+							font-size: 14px
+							font-weight: 400
+							color: lighten(black, 25%)
+							margin-bottom: 0
+				@media (min-width: 576px)
+					flex-direction: row
+					position: relative
+					&:before
+						content: ''
+						position: absolute
+						width: 16px
+						height: 16px
+						border-radius: 50%
+						border: 1px solid darken(white,35%)
+						top: 50%
+						right: calc(100% + 12px)
+						transform: translateY(-50%)
+	
+				&.active
+					border-color: map-get($mau, main)
+					@media (min-width: 576px)
+						&:before
+							border: 5px solid map-get($mau, main)
+				.img
+					flex: 0 0 80px
+					min-height: 80px
+					display: flex
+					justify-content: center
+					align-items: center
+					border-right: 1px solid darken(white,4%)
+					@media (min-width: 576px)
+						margin-right: 1rem
+					img
+						width: 60px
+				.text
+					display: flex
+					flex-direction: column
+					justify-content: center
+					padding: 10px
+					@media (min-width: 576px)
+						padding: 1rem 0
+					h5,p
+						width: 100%
+						margin-bottom: 0
+						font-size: 13px
+						color: lighten(black,40%)
+					h5
+						margin-bottom: .5rem
+.viewed-product
+	padding: 30px 15px
+	@media (min-width: 992px)
+		padding: 60px 15px
+	.swiper-container
+		padding: 1rem
+		margin: -1rem
+		.swiper-button-prev
+			width: 40px
+			height: 40px
+			display: flex
+			justify-content: center
+			align-items: center
+			background-image: none
+			z-index: 20
+			left: 0
+			&.swiper-button-disabled
+				pointer-events: initial
+			span
+				width: 40px
+				height: 40px
+				color: #ccc
+				font-size: 1.5rem
+		.swiper-button-next
+			width: 40px
+			height: 40px
+			display: flex
+			justify-content: center
+			align-items: center
+			background-image: none
+			z-index: 20
+			right: 0
+			&.swiper-button-disabled
+				pointer-events: initial
+			span
+				width: 40px
+				height: 40px
+				color: #ccc
+				font-size: 1.5rem
+		.swiper-wrapper
+			.swiper-slide
+				.tna-product-item
+					figure
+						border: 1px solid darken(white,15%)
+						box-shadow: none
+						.boxzoom
+							img
+								width: 100%
+						figcaption
+							.price
+								margin-bottom: .5rem
+							.addcart
+								font-size: 12px
+								font-weight: 600
+								color: lighten(black,20%)
+								display: inline-flex
+								border: 1px solid darken(white,15%)
+								height: 2rem
+								align-items: center
+								padding: 0 .5rem
+								border-radius: 5px

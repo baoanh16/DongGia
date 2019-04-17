@@ -1,11 +1,8 @@
 extends _layout.pug
-
 block var
-	- var title = "Gallery"
+	- var title = "About"
 	- var name = "gallery"
-	- var bodyClass = "gallery-page"
-
 block main
-	include ../components/breadcrumb/index.pug
-	+PageBanner("./img/banner/b_6.jpg")
+	include ../components/about/a-1/index.pug
+	include ../components/catalogue/c-2/index.pug
 	include ../components/gallery/index.pug

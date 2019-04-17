@@ -1,0 +1,135 @@
+.cart
+	position: relative
+	.cartpanel
+		position: absolute
+		top: 100%
+		margin-top: 20px
+		right: 0
+		box-shadow: 0 0 5px grey
+		width: 290px
+		display: none
+		z-index: 3000
+		transition: all .3s ease-in-out
+		@media (min-width: 576px)
+			width: 360px
+		@media (max-width: 576px)
+			top: 50px
+		&.open
+			display: block
+		@media (max-width: 576px)
+			&:before
+				content: ''
+				position: absolute
+				border-left: 7px solid transparent
+				border-right: 7px solid transparent
+				border-bottom: 10px solid map-get($mau, main)
+				bottom: 100%
+				right: 42px
+		.title
+			background: map-get($mau, main)
+			color: white
+			padding: 0 10px
+			font-size: .8rem
+			line-height: 40px
+			a
+				color: white
+				line-height: 40px
+				&:hover
+					text-decoration: underline
+					color: white
+		.btn-closecart
+			position: absolute
+			font-size: 20px
+			color: white
+			line-height: 1
+			top: 9px
+			right: 10px
+			cursor: pointer
+			span
+				background: transparent
+				border-radius: 50%
+		.cart-list
+			padding: 0 10px
+			background: white
+			max-height: 300px
+			overflow-y: auto
+			ul
+				list-style-type: none
+				padding-left: 0
+				margin-bottom: 0
+				li
+					padding: 10px 0 15px 0
+					border-bottom: 1px dashed rgba(0,0,0,.1)
+					display: flex
+					.product-img
+						max-width: 60px
+						border: 1px solid darken(white, 15%)
+						img
+							max-width: 100%
+							height: auto
+					.product-info
+						margin-left: 10px
+						color: #333
+						.product-name
+							font-size: 13px
+							a
+								color: map-get($mau, main)
+					.remove-product
+						cursor: pointer
+						margin-left: auto
+						align-self: center
+						i
+							font-style: normal
+							&:before
+								color: darken(map-get($mau, main), 10%)
+		.checkout-panel
+			.total
+				background: white
+				padding: 5px 10px
+				font-size: 14px
+				color: #333
+				strong
+					color: map-get($mau,main)
+			.button
+				background: map-get($mau, main)
+				padding: 10px
+				a
+					display: block
+					font-size: 15px
+					text-align: center
+					color: white
+					text-decoration: none
+					&:before
+						content: '\f07a'
+						font-family: 'Font Awesome 5 Free'
+						margin-right: 5px
+						color: white
+						font-weight: 900
+	@media (min-width: 992px)
+		.cartpanel
+			.title
+				font-size: 1rem
+			.cart-list
+				ul
+					li
+						.product-img
+							width: 100px
+			.checkout-panel
+				.total
+					font-size: 15px
+	@media (min-width: 576px)
+		.cartpanel
+			right: -30px
+.backdrop
+	@media (max-width: 992px)
+		position: fixed
+		width: 100%
+		height: calc(100vh - 65px)
+		top: 65px
+		left: 0
+		background: color-rgba(black, .85)
+		display: none
+		z-index: 19
+		cursor: pointer
+.fa-trash-o:before
+	content: "\f2ed"

@@ -1,0 +1,79 @@
+.checkout-step-wrap
+	padding-top: 30px
+	@media (min-width: 992px)
+		padding-top: 60px
+	.container
+		.row
+			margin: 0
+			border-radius: 5px
+			overflow: hidden
+	.step
+		background: darken(white,4%)
+		padding: 10px 0
+		flex: 0 0 25%
+		@media (min-width: 576px)
+			padding-left: .75rem
+		@media (min-width: 768px)
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				width: 16px
+				height: 100%
+				top: 50%
+				transform: translateY(-50%)
+				right: 0
+				background-position: 100%
+				background-size: cover
+				background-repeat: no-repeat
+			&:last-child
+				&:after
+					content: none
+		@media (min-width: 992px)
+			padding-left: 21px
+		p
+			margin-bottom: 0
+			span
+				margin-top: 0
+				display: flex
+				font-weight: 800
+				font-size: 12px
+				@media (min-width: 576px)
+					display: inline-flex
+				@media (min-width: 992px)
+					font-size: 16px
+				&:first-child
+					color: white
+					width: 30px
+					height: 30px
+					background: #34507E
+					border-radius: 50%
+					justify-content: center
+					align-items: center
+					margin: auto
+					@media (min-width: 576px)
+						margin-right: .75rem
+				&:last-child
+					margin-top: 6px
+					color: #333
+					justify-content: center
+					font-weight: 500
+		&.active, &.finished
+			background: rgba(red(#fa1126),green(#fa1126),blue(#fa1126),.5)
+			p
+				span
+					&:first-child
+						background: white
+						color: #333
+						color: map-get($mau, main)
+					&:last-child
+						color: white
+		&.finished
+			span
+				&:first-child
+					font-size: 0
+					&:before
+						content: '\f00c'
+						font-family: 'Font Awesome 5 Free'
+						font-weight: 900
+						font-size: 12px

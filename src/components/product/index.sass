@@ -2,6 +2,7 @@
 .product-item
 	margin-bottom: 30px
 	.imgbox
+		overflow: hidden
 		box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1)
 		transition: all .5s ease-out
 		img
@@ -92,6 +93,8 @@
 				display: flex
 				align-items: center
 				position: relative
+				span 
+					color: #999999
 				>span,>a
 					font-size: 14px
 					text-transform: uppercase
@@ -103,6 +106,8 @@
 					display: flex
 					align-items: center
 				&.active
+					span 
+						color: #6a4b2d
 					.lnr
 						transform: rotateX(180deg)
 				.dropdown
@@ -138,9 +143,15 @@
 								font-weight: 500
 								color: lighten(black,33%)
 					.viewall
+						a 
+							color: #333333
 						padding-bottom: 8px
 						border-bottom: 1px solid darken(white,12%)
-
+	@media (max-width: 992px)
+		.product-category
+			// display: inline
+			.nav-item
+				border-right: 1px solid #e0e0e0
 .product-wrapper
 	padding: 80px 0
 	.title
@@ -200,8 +211,9 @@
 			border-bottom: 1px solid darken(white, 8%)
 			padding: 16px 0
 		.price-wrapper
-			.td:last-child
-				margin-left: auto
+			justify-content: space-between
+			// .td:last-child
+			// 	margin-left: auto
 			span
 				font-size: 14px
 				font-weight: 700
@@ -322,11 +334,17 @@
 			.type
 				font-size: 12px
 			.name
+				overflow: hidden
+				display: -webkit-box
+				text-overflow: ellipsis
+				-webkit-line-clamp: 2
+				-webkit-box-orient: vertical
 				font-size: 15px
-				// min-height: 50px
+				min-height: 44px
 			.price
 				font-size: 15px
 			.addcart
+				display: block
 				opacity: 1
 				position: unset
 				margin: 0
