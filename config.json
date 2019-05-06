@@ -5,15 +5,18 @@
 		"bower_components/linearicons/dist/web-font/fonts/*"
 	],
 	"globalJs": [
-		"bower_components/jquery/dist/jquery.js",
 		"bower_components/swiper/dist/js/swiper.min.js",
+		"src/plugins/lazysizes.min.js",
+		"bower_components/jquery/dist/jquery.js",
 		"bower_components/fancybox/dist/jquery.fancybox.js",
 		"bower_components/isotope-layout/dist/isotope.pkgd.min.js",
-		"bower_components/imagesloaded/imagesloaded.pkgd.min.js"
+		"bower_components/imagesloaded/imagesloaded.pkgd.min.js",
+		"src/plugins/wowbook.js"
 	],
 	"globalCss": [
 		"src/plugins/font.css",
 		"src/plugins/grid.css",
+		"src/plugins/wowbook.css",
 		"bower_components/swiper/dist/css/swiper.min.css",
 		"bower_components/fancybox/dist/jquery.fancybox.css",
 		"bower_components/linearicons/dist/web-font/style.css"

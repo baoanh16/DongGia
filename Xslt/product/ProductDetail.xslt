@@ -4,6 +4,7 @@
 	<xsl:output method="html" indent="yes" />
 
 	<xsl:template match="/">
+		<div class="container">
 		<div class="row">
 			<div class="product-image">
 				<div class="big">
@@ -19,14 +20,14 @@
 				</div>
 			</div>
 			<div class="product-info">
-				<div class="row">
+				<div class="row no-gutters">
 					<h1 class="title">
 						<xsl:value-of select="/ProductDetail/Title"></xsl:value-of>
 						<xsl:value-of select="/ProductDetail/EditLink" disable-output-escaping="yes">
 						</xsl:value-of>
 					</h1>
 				</div>
-				<div class="row info-wrapper">
+				<div class="row no-gutters info-wrapper">
 					<div class="td">
 						<h2 class="subTitle">
 							<xsl:value-of select="/ProductDetail/SubTitle"></xsl:value-of>
@@ -39,7 +40,7 @@
 						</span>
 					</div>
 				</div>
-				<div class="row price-wrapper">
+				<div class="row no-gutters price-wrapper">
 					<div class="td">
 						<span class="price">
 							<xsl:value-of select="/ProductDetail/Price" />
@@ -50,7 +51,7 @@
 								<span class="quantity">Out of Stock</span>
 							</div>-->
 				</div>
-				<div class="row quantity-wrapper">
+				<div class="row no-gutters quantity-wrapper">
 					<span>Quantity</span>
 					<div class="quantity-count">
 						<span class="btn-spin btn-dec">-</span>
@@ -72,7 +73,7 @@
 						<span>Add to cart</span>
 					</div>
 				</div>
-				<div class="row product-tab">
+				<div class="row no-gutters product-tab">
 					<div class="td">
 						<nav>
 							<xsl:apply-templates select="/ProductDetail/ProductAttributes" mode="Nav" />
@@ -84,7 +85,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row product-other">
+		<div class="row no-gutters product-other">
 			<div class="col">
 				<h2 class="title">You may also like...</h2>
 			</div>
@@ -97,8 +98,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- </div>
-		</div> -->
+		</div>
 	</xsl:template>
 
 	<xsl:template match="ProductAttributes" mode="Content">

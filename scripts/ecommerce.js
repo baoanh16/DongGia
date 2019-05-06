@@ -1,5 +1,58 @@
 ﻿; var siteRoot = '';
+var currCulture = 'vi';
+var lang = {};
+lang['en'] = {
+	'Address_FirstName': "Firstname is required",
+	'Address_LastName': "Last name is required",
+	'Address_Email': "Invalid email",
+	'Address_Address': "Address is required",
+	'Address_Phone': "Phone number is required",
+	'Address_Province': "Province is required",
+	'Address_District': "District is required",
+	'ShippingMethod': "Shipping method is required",
+	'Invoice_CompanyTaxCode': "Tax code is required",
+	'Invoice_CompanyName': "Company name is required",
+	'Invoice_CompanyAddress': "Company address is required"
+};
+lang['vi'] = {
+	'Address_FirstName': "Vui lòng nhập Tên",
+	'Address_LastName': "Vui lòng nhập Họ",
+	'Address_Email': "Email không hợp lệ",
+	'Address_Address': "Vui lòng nhập Địa chỉ",
+	'Address_Phone': "Vui lòng nhập Điện thoại",
+	'Address_Province': "Vui lòng nhập Tỉnh/Thành",
+	'Address_District': "Vui lòng nhập Quận/Huyện",
+	'ShippingMethod': "Vui lòng nhập Phương thức vận chuyển",
+	'Invoice_CompanyTaxCode': "Vui lòng nhập Mã số thuế",
+	'Invoice_CompanyName': "Vui lòng nhập Tên công ty",
+	'Invoice_CompanyAddress': "Vui lòng nhập Địa chỉ công ty"
+};
+
 $(document).ready(function () {
+	if ($('body').hasClass('en-us'))
+		currCulture = 'en';
+	$('.ajaxresponsesort').appendTo(".product-filter .sort");
+	$('.ajaxresponsesort').show();
+	$('.btn-spin').click(function () {
+		var $button = $(this);
+		var oldValue = $button.parent().find('input').val();
+
+		if ($button.text() == '+') {
+			var newVal = parseFloat(oldValue) + 1;
+		} else {
+			// Don't allow decrementing below zero
+			if (oldValue > 1) {
+				var newVal = parseFloat(oldValue) - 1;
+			} else {
+				newVal = 1;
+			}
+		}
+
+		$button.parent().find('input').val(newVal);
+		var sizeid = $button.parent().find('input').attr("data-size");
+		if ($('.carttable').length)
+			AjaxCart.updatecart(sizeid);
+	});
 	/*************************************************************************************************************/
     /* BEGIN SEARCH
     /*************************************************************************************************************/
@@ -245,9 +298,9 @@ $(document).ready(function () {
 
 	$("body").on("click", 'a.ajaxlink', function (e) {
 		e.preventDefault();
-        /*	
+        /*
         if uncomment the above line, html5 nonsupported browers won't change the url but will display the ajax content;
-        if commented, html5 nonsupported browers will reload the page to the specified link. 
+        if commented, html5 nonsupported browers will reload the page to the specified link.
         */
 
 		ProcessAjax($(this).attr('href'));
@@ -282,9 +335,9 @@ $(document).ready(function () {
 
 	$("body").on("click", "a.ajaxpagerlink", function (e) {
 		e.preventDefault();
-        /*	
+        /*
         if uncomment the above line, html5 nonsupported browers won't change the url but will display the ajax content;
-        if commented, html5 nonsupported browers will reload the page to the specified link. 
+        if commented, html5 nonsupported browers will reload the page to the specified link.
         */
 
 		//get the link location that was clicked
@@ -718,7 +771,7 @@ function displayBarNotification(n, t, i) {
 	}, i))
 }
 
-// fly to basket  
+// fly to basket
 function flyToCart(flyer, flyingTo, callBack) {
 	try {
 		var $jqfunc = $(this);
@@ -850,13 +903,14 @@ var AjaxCheckout = {
 		}
 		this.setLoadWaiting(true);
 
-		$("#aspnetForm").validate({
+		var validator = $("#aspnetForm").validate({
 			onsubmit: false,
 			rules: {
 				Address_FirstName: "required",
 				Address_LastName: "required",
 				Address_Email: {
-					email: true
+					email: true,
+					required: true
 				},
 				Address_Address: "required",
 				Address_Phone: "required",
@@ -868,22 +922,23 @@ var AjaxCheckout = {
 				Invoice_CompanyAddress: { required: "#Invoice_Required:checked" }
 			},
 			messages: {
-				Address_FirstName: "Vui lòng nhập Tên",
-				Address_LastName: "Vui lòng nhập Họ",
-				Address_Email: "Email không hợp lệ",
-				Address_Address: "Vui lòng nhập Địa chỉ",
-				Address_Phone: "Vui lòng nhập Điện thoại",
-				Address_Province: "Vui lòng nhập Tỉnh/Thành",
-				Address_District: "Vui lòng nhập Quận/Huyện",
-				ShippingMethod: "Vui lòng nhập Phương thức vận chuyển",
-				Invoice_CompanyTaxCode: "Vui lòng nhập Mã số thuế",
-				Invoice_CompanyName: "Vui lòng nhập Tên công ty",
-				Invoice_CompanyAddress: "Vui lòng nhập Địa chỉ công ty"
+				Address_FirstName: lang[currCulture].Address_FirstName,
+				Address_LastName: lang[currCulture].Address_LastName,
+				Address_Email: lang[currCulture].Address_Email,
+				Address_Address: lang[currCulture].Address_Address,
+				Address_Phone: lang[currCulture].Address_Phone,
+				Address_Province: lang[currCulture].Address_Province,
+				Address_District: lang[currCulture].Address_District,
+				ShippingMethod: lang[currCulture].ShippingMethod,
+				Invoice_CompanyTaxCode: lang[currCulture].Invoice_CompanyTaxCode,
+				Invoice_CompanyName: lang[currCulture].Invoice_CompanyName,
+				Invoice_CompanyAddress: lang[currCulture].Invoice_CompanyAddress
 			}
 		});
 
 		if (!$("#aspnetForm").valid()) {
 			this.setLoadWaiting(false);
+			validator.focusInvalid();
 			return;
 		}
 

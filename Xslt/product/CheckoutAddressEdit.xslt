@@ -15,6 +15,10 @@
 				</label>
 			</div>
 			<div class="address-edit">
+			
+				<div class="form-group form-note">
+					<label><i><xsl:value-of select="/CheckoutAddress/NoteRequied" disable-output-escaping="yes"></xsl:value-of></i></label>
+				</div>
 				<div class="form-group form-name">
 					<label>
 						<xsl:value-of select="/CheckoutAddress/FullNameText"></xsl:value-of>
@@ -25,7 +29,7 @@
 						<xsl:value-of select="/CheckoutAddress/plFullText"></xsl:value-of>
 					</xsl:attribute>
 					<xsl:attribute name="value">
-						<xsl:value-of select="/CheckoutAddress/FirstName"></xsl:value-of>
+						<xsl:value-of select="/CheckoutAddress/FirstNameValue"></xsl:value-of>
 					</xsl:attribute>
 					</input>
 				</div>
@@ -39,7 +43,7 @@
 						<xsl:value-of select="/CheckoutAddress/plPhone"></xsl:value-of>
 					</xsl:attribute>
 					<xsl:attribute name="value">
-						<xsl:value-of select="/CheckoutAddress/Phone"></xsl:value-of>
+						<xsl:value-of select="/CheckoutAddress/PhoneValue"></xsl:value-of>
 					</xsl:attribute>
 					</input>
 					<span>
@@ -54,6 +58,9 @@
 						<xsl:attribute name="placeholder">
 							<xsl:value-of select="/CheckoutAddress/plEmail"></xsl:value-of>
 						</xsl:attribute>
+					<xsl:attribute name="value">
+						<xsl:value-of select="/CheckoutAddress/EmailValue"></xsl:value-of>
+					</xsl:attribute>
 					</input>
 				</div>
 				<hr />
@@ -91,7 +98,7 @@
 						<xsl:value-of select="/CheckoutAddress/plAddress"></xsl:value-of>
 					</xsl:attribute>
 					<xsl:attribute name="value">
-						<xsl:value-of select="/CheckoutAddress/Address"></xsl:value-of>
+						<xsl:value-of select="/CheckoutAddress/AddressValue"></xsl:value-of>
 					</xsl:attribute>
 					</input>
 				</div>
@@ -102,19 +109,20 @@
 							<xsl:value-of select="/CheckoutAddress/NonRequest"></xsl:value-of>
 						</span> -->
 
-						<xsl:value-of select="/CheckoutAddress/OrderNote"></xsl:value-of><span>(Không bắt buộc)</span>
+						<xsl:value-of select="/CheckoutAddress/OrderNote"></xsl:value-of>
 					</label>
 					<textarea name="OrderNote" cols="30" rows="2" placeholder="Ví dụ: Chuyển hàng ngoài giờ hành chính">
 						<xsl:attribute name="placeholder">
 						<xsl:value-of select="/CheckoutAddress/plNode"></xsl:value-of>
 						</xsl:attribute>
+						<xsl:value-of select="/CheckoutAddress/OrderNoteValue"></xsl:value-of>
 					</textarea>
 				</div>
 				<div class="check-group">
 					<input id="ttmh" type="checkbox" name="Address_SameBilling" checked="checked"></input>
 					<label id="btn-ttmh" for="ttmh">
-						<!-- <xsl:value-of select="/CheckoutAddress/InfoSameAbove"></xsl:value-of> -->
-						<xsl:value-of select="/CheckoutAddress/OrderNote"></xsl:value-of>
+					
+						<xsl:value-of select="/CheckoutAddress/InfoShipping"></xsl:value-of>
 					</label>
 				</div>
 			</div>
@@ -219,7 +227,7 @@
 		</div>
 		<div class="cart-bill-info">
 			<p>
-				<xsl:value-of select="/CheckoutAddress/ExportRedBill"></xsl:value-of>
+				<xsl:value-of select="/CheckoutAddress/NoteRedBillRequied"></xsl:value-of>
 			</p>
 			<!-- <p>Vui lòng điền đầy đủ thông tin công ty để nhận hóa đơn GTGT</p> -->
 			<div class="form-group form-taxcode">
@@ -271,7 +279,7 @@
 
 
 				<xsl:otherwise>
-					<p><xsl:value-of select="/CheckoutAddress/ExportRedBill" disable-output-escaping="yes"></xsl:value-of></p>
+					<!-- <p><xsl:value-of select="/CheckoutAddress/CouponNote" disable-output-escaping="yes"></xsl:value-of></p> -->
 					<div class="form-group">
 						<input type="text" id="couponCode" autocomplete="off" max-length="20" placeholder="Nhập mã giảm giá">
 						<xsl:attribute name="placeholder">

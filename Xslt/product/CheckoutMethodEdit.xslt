@@ -27,8 +27,9 @@
 			<!-- <xsl:if test="Id=3"> -->
 			<div class="cart-title">
 				<!-- <h3><span class="fas fa-shopping-cart"></span> -->
-				<h3><span>
-					<xsl:value-of select="/CheckoutMethod/MethodText"></xsl:value-of>
+				<h3><span class="fas fa-clipboard-list"></span>
+				<span>
+					<xsl:value-of select="/CheckoutMethod/PolicyText"></xsl:value-of>
 				</span>
 				</h3>
 			</div>

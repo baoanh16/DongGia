@@ -422,6 +422,15 @@
 					border-top-right-radius: 5px
 					border-bottom-right-radius: 5px
 					color: white
+					width: 40px
+					display: flex
+					justify-content: center
+					align-items: center
+					&:before
+						content: '\f349'
+						font-family: 'Material Design Icons'
+						color: white
+						font-size: 24px
 		.cart-bill-export
 			input
 				display: none
@@ -439,6 +448,9 @@
 					color: map-get($mau, main)
 					border: 1px solid map-get($mau, main)
 					border-radius: 3px
+					display: flex
+					justify-content: center
+					align-items: center
 				&.active
 					&:before
 						content: '\f14a'

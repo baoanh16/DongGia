@@ -77,6 +77,7 @@ $(document).ready(function () {
 			nextEl: '.dg-about-banner .swiper-next',
 			prevEl: '.dg-about-banner .swiper-prev'
 		},
+		lazy: true,
 	})
 
 	var $isoGrid = $('.gallery .grid').isotope({
@@ -112,9 +113,13 @@ $(document).ready(function () {
 	var Banner = new Swiper('.dg-banner .swiper-container', {
 		slidesPerView: 1,
 		autoplay: {
-			delay: 2000
+			disableOnInteraction: false,
+			delay: 4000
 		},
-		loop: true
+		speed: 1200,
+		loop: true,
+		loopAdditionalSlides: 1,
+		lazy: true,
 	})
 
 	$('.product-category .nav-item').on('click', function () {
@@ -247,4 +252,47 @@ $(document).ready(function () {
 	$('.quantity.input-number .minus, .quantity.input-number .plus').click(function () {
 		$(this).siblings('input').trigger('change')
 	})
+
+	if ($('.en-us').length > 0) {
+		if ($('.guest-email').length > 0) {
+			$('.en-us .guest-email .module-title').html('Email')
+		}
+		if ($('.login-form').length > 0) {
+			$('.en-us .login-form .module-title').html('Email')
+		}
+	}
+	var videoPlay = false;
+	$('.dg-about-profile .button-video').on('click', function () {
+		if (videoPlay == false) {
+			console.log(videoPlay)
+			$('.dg-about-profile video').trigger('play')
+			videoPlay = true;
+		} else {
+			console.log(videoPlay)
+			$('.dg-about-profile video').trigger('pause')
+			videoPlay = false;
+		}
+	})
+	$('.dg-about-profile .video').on('mouseover', function () {
+		$('.dg-about-profile .button-video').fadeIn(300)
+	}).on('mouseleave', function () {
+		$('.dg-about-profile .button-video').fadeOut(400)
+	})
+
+	$('#wowbook').wowBook({
+		width: 1240,
+		height: 790,
+		centeredWhenClosed: true,
+		hardcovers: true,
+		pageNumbers: false,
+		controls: {
+			zoomIn: '#zoomin',
+			zoomOut: '#zoomout',
+			next: '#next',
+			back: '#back',
+			first: '#first',
+			last: '#last',
+		},
+		scaleToFit: ".wowbook-wrapper"
+	});
 })

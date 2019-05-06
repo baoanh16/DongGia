@@ -310,4 +310,8 @@
   <data name="AgreeText" xml:space="preserve">
     <value>Tôi đã đọc và đồng ý điều khoản trên</value>
   </data>
+  
+  <data name="PolicyText" xml:space="preserve">
+    <value>Điều khoản</value>
+  </data>
 </root>

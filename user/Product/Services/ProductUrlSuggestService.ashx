@@ -1,1 +1,0 @@
-<%@ WebHandler Language="C#" CodeBehind="ProductUrlSuggestService.ashx.cs" Class="CanhCam.Web.ProductUI.ProductUrlSuggestService" %>
