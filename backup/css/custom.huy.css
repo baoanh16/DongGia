@@ -1,0 +1,285 @@
+.customer-support {
+    padding: 90px 0;
+}
+
+.customer-support .zone-1 {
+    margin-bottom: 16px;
+}
+
+.customer-support .zone-1 a {
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333333;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.customer-support .zone-1 a:hover,
+.customer-support .zone-2 a:hover {
+    color: #6a4b2d;
+}
+
+.customer-support .zone-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+.customer-support .zone-2 a {
+    padding-bottom: 2px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #999999;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 20px;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.customer-support .zone-2 a:first-child {
+    margin-top: 0;
+}
+
+.customer-support .zone-2 a.active {
+    font-weight: 700;
+    color: #6a4b2d;
+    border-bottom: 2px solid #6a4b2d;
+}
+
+.customer-support .zone-mobile {
+    display: none;
+}
+
+.customer-support .page-title {
+    font-size: 35px;
+    color: #555555;
+    font-weight: 400;
+}
+
+.customer-support .faq .question {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 0;
+    border-bottom: 1px solid #ebebeb;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.customer-support .faq .question span {
+    font-size: 15px;
+    margin-right: 20px;
+    font-weight: 700;
+    color: #333333;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.customer-support .faq .question em {
+    display: block;
+    font-size: 12px;
+    color: #666666;
+    margin-left: auto;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.customer-support .faq .answer {
+    padding: 30px 20px;
+    display: none;
+}
+
+.customer-support .faq .answer p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666666;
+}
+
+.customer-support .faq.active .question span {
+    color: #6a4b2d;
+}
+
+.customer-support .faq.active .question em {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.customer-support .page-desc {
+    margin-top: 4px;
+    margin-bottom: 24px;
+}
+
+.customer-support .page-desc p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666666;
+    margin-bottom: 16px;
+}
+
+.customer-support .page-desc p:last-child {
+    margin-bottom: 0;
+}
+
+.customer-support .term .title {
+    font-size: 15px;
+    color: #333333;
+    font-weight: 700;
+    line-height: 18px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.customer-support .term {
+    margin-bottom: 24px
+}
+
+.customer-support .term:last-child {
+    margin-bottom: 0;
+}
+
+.customer-support .term .content ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 15px;
+}
+
+.customer-support .term .content ul li {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.customer-support .term .content ul li:last-child {
+    margin-bottom: 0;
+}
+
+.customer-support .term .content ul>li:before {
+    display: inline-block;
+    content: "-";
+    width: 15px;
+    margin-left: -15px;
+}
+
+.contact-info {
+    padding: 40px 30px !important;
+}
+
+.contact-info .item {
+    -webkit-box-pack: start !important;
+    -ms-flex-pack: start !important;
+    justify-content: flex-start !important;
+}
+
+.contact-info .item:last-child {
+    -webkit-box-align: start !important;
+    -ms-flex-align: start !important;
+    align-items: flex-start !important;
+}
+
+.dg-contact .contact-item:last-child .item .thong-tin {
+    margin-left: 20px !important;
+}
+
+
+@media (max-width: 992px) {
+
+    .customer-support .zone-2 {
+        display: none;
+    }
+
+    .customer-support .zone-mobile {
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .customer-support .zone-mobile select {
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        border: 1px solid #d6d6d6;
+        -webkit-box-shadow: 0 0 0 0px #ffffff;
+        box-shadow: 0 0 0 0px #ffffff;
+        outline: none;
+    }
+
+    .customer-support .zone-mobile select:focus {
+        border-color: rgb(250, 17, 38);
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2)
+    }
+
+    .customer-support .page-title {
+        font-size: 20px;
+    }
+
+    .customer-support .faq .answer {
+        padding: 30px 0;
+    }
+}
+
+.edit-link {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #6a4b2d;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.edit-link:hover {
+    text-decoration: none;
+}
+
+.edit-link i {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: "Font Awesome 5 Free" !important;
+}
+
+.edit-link i:before {
+    content: '\f303' !important;
+    font-size: 14px !important;
+    color: #6a4b2d;
+}
