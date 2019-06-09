@@ -11,6 +11,8 @@
 		"bower_components/fancybox/dist/jquery.fancybox.js",
 		"bower_components/isotope-layout/dist/isotope.pkgd.min.js",
 		"bower_components/imagesloaded/imagesloaded.pkgd.min.js",
+		"bower_components/plyr/dist/plyr.polyfilled.min.js",
+		"bower_components/elevatezoom/jquery.elevateZoom-2.2.3.min.js",
 		"src/plugins/wowbook.js"
 	],
 	"globalCss": [
@@ -19,6 +21,7 @@
 		"src/plugins/wowbook.css",
 		"bower_components/swiper/dist/css/swiper.min.css",
 		"bower_components/fancybox/dist/jquery.fancybox.css",
-		"bower_components/linearicons/dist/web-font/style.css"
+		"bower_components/linearicons/dist/web-font/style.css",
+		"bower_components/plyr/dist/plyr.css"
 	]
 }

@@ -19,8 +19,8 @@
 					<xsl:value-of select="Url"></xsl:value-of>
 				</xsl:attribute>
 				<div class="img">
-					<img class="swiper-lazy">
-						<xsl:attribute name="data-src">
+					<img>
+						<xsl:attribute name="src">
 							<xsl:value-of select="ImageUrl"></xsl:value-of>
 						</xsl:attribute>
 						<xsl:attribute name="alt">

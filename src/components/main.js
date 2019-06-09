@@ -118,8 +118,6 @@ $(document).ready(function () {
 		},
 		speed: 1200,
 		loop: true,
-		loopAdditionalSlides: 1,
-		lazy: true,
 	})
 
 	$('.product-category .nav-item').on('click', function () {
@@ -133,21 +131,21 @@ $(document).ready(function () {
 		slidesPerView: 4,
 		speed: 1200,
 		loop: true,
+		loopedSlides: 5,
 		slideToClickedSlide: true,
-		autoplay: {
-			delay: 3500,
-			disableOnInteraction: false,
+	})
+	var productBig = new Swiper('.product-image .big', {
+		slidesPerView: 1,
+		speed: 1200,
+		loop: true,
+		loopedSlides: 5,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true
+		},
+		thumbs: {
+			swiper: productThumbnail,
 		}
-	})
-	productThumbnail.on('click', function () {
-		var target = $('.product-image .thumbnail .swiper-slide-active').attr('data-target')
-		$('.product-image .big .slide').not('[data-id=' + target + ']').hide()
-		$('[data-id=' + target + ']').fadeIn(400)
-	})
-	productThumbnail.on('transitionStart', function () {
-		var target = $('.product-image .thumbnail .swiper-slide-active').attr('data-target')
-		$('.product-image .big .slide').not('[data-id=' + target + ']').hide()
-		$('[data-id=' + target + ']').fadeIn(400)
 	})
 
 	// Product Tab
@@ -279,9 +277,16 @@ $(document).ready(function () {
 		$('.dg-about-profile .button-video').fadeOut(400)
 	})
 
+	var wowHeight;
+	if ($(window).width() >= 1366) {
+		wowHeight = 650;
+	}
+	if ($(window).width() < 1366) {
+		wowHeight = 500;
+	}
 	$('#wowbook').wowBook({
 		width: 1240,
-		height: 790,
+		height: wowHeight,
 		centeredWhenClosed: true,
 		hardcovers: true,
 		pageNumbers: false,
@@ -295,4 +300,29 @@ $(document).ready(function () {
 		},
 		scaleToFit: ".wowbook-wrapper"
 	});
+
+	const player = new Plyr(document.querySelectorAll('#video'));
+	$('.product-image .big img').elevateZoom();
+
+	var aboutMemberSlider = new Swiper('.dg-about-team .about-member', {
+		slidesPerView: 4,
+		autoplay: {
+			delay: 4000,
+			disableOnInteraction: false,
+		},
+		loop: true,
+		spaceBetween: 20,
+		navigation: {
+			prevEl: ".dg-about-team .about-member .btn-prev",
+			nextEl: ".dg-about-team .about-member .btn-next"
+		},
+		breakpoints: {
+			992: {
+				slidesPerView: 3,
+			},
+			768: {
+				slidesPerView: 2,
+			}
+		}
+	})
 })
