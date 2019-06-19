@@ -84,11 +84,11 @@ gulp.task('processJs', function () {
 	return gulp.src('src/components/main.js')
 		.pipe(srcmap.init())
 		.pipe(uglify())
-		.pipe(srcmap.write('.'))
 		.pipe(rename({
 			suffix: '.min',
 			basename: 'main'
 		}))
+		.pipe(srcmap.write('.'))
 		.pipe(gulp.dest('dist/js'))
 })
 
@@ -245,7 +245,6 @@ gulp.task('serve', function () {
 		),
 		gulp.watch(
 			[
-				'src/pages/**/**.js',
 				'src/components/**/**.js',
 			],
 			gulp.series('processJs')

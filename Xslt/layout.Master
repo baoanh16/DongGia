@@ -10,18 +10,30 @@
 		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<portal:StyleSheetCombiner ID="StyleSheetCombiner" runat="server" IncludejQueryUI="false"
 		JQueryUIThemeName="smoothness" />
-	<portal:Favicon ID="Favicon1" runat="server" />
+	<!-- <portal:Favicon ID="Favicon1" runat="server" /> -->
 	<portal:ScriptLoader ID="ScriptLoader1" runat="server" IncludejQueryUICore="true" IncludeFancyBox="true" />
-	<portal:SkinFolderScript ID="SkinFolderScript2" runat="server" ScriptFileName="js/main.min.js"
-		AddToCombinedScript="true" />
-	<portal:SkinFolderScript ID="SkinFolderScript1" runat="server" ScriptFileName="js/global.min.js"
-		AddToCombinedScript="true" />
-	<portal:SkinFolderScript ID="SkinFolderScript3" runat="server" ScriptFileName="js/ecommerce.js"
-		AddToCombinedScript="true" />
 	<portal:GoogleAnalyticsScript ID="GoogleAnalyticsScript1" runat="server" />
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&amp;subset=vietnamese"
 		rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<!-- ////////////// Favicon ////////////// -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/Data/Sites/1/skins/default/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/Data/Sites/1/skins/default/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/Data/Sites/1/skins/default/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/Data/Sites/1/skins/default/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/Data/Sites/1/skins/default/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/Data/Sites/1/skins/default/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/Data/Sites/1/skins/default/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/Data/Sites/1/skins/default/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/Data/Sites/1/skins/default/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"
+		href="/Data/Sites/1/skins/default/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/Data/Sites/1/skins/default/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/Data/Sites/1/skins/default/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/Data/Sites/1/skins/default/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/Data/Sites/1/skins/default/favicon/manifest.json">
+	<meta name="msapplication-TileColor">
+	<meta name="msapplication-TileImage" content="/Data/Sites/1/skins/default/favicon/ms-icon-144x144.png">
 
 	<!--*********************************************************************************************-->
 	<!-- Canh Cam - the best Web Solutions Provider - http://www.canhcam.vn                          -->
@@ -87,11 +99,11 @@
 				</div>
 				<div class="backdrop"></div>
 			</header>
-			<asp:Panel ID="divAlt1" runat="server" CssClass="altcontent1">
-				<asp:ContentPlaceHolder ID="altContent1" runat="server">
-				</asp:ContentPlaceHolder>
-			</asp:Panel>
 			<main>
+				<asp:Panel ID="divAlt1" runat="server" CssClass="altcontent1">
+					<asp:ContentPlaceHolder ID="altContent1" runat="server">
+					</asp:ContentPlaceHolder>
+				</asp:Panel>
 				<asp:Panel ID="divLeft" runat="server" CssClass="leftside" Visible="True" SkinID="pnlPlain">
 					<asp:ContentPlaceHolder ID="leftContent" runat="server">
 					</asp:ContentPlaceHolder>
@@ -224,6 +236,11 @@
 			</script>
 		</portal:AutoHidePanel>
 		<portal:Woopra ID="woopra11" runat="server" />
+
+		<script type="text/javascript" src="/Data/Sites/1/skins/default/js/global.min.js"></script>
+		<script type="text/javascript" src="/Data/Sites/1/skins/default/js/main.min.js"></script>
+		<script type="text/javascript" src="/Data/Sites/1/skins/default/js/ecommerce.js"></script>
+		<script type="text/javascript" src="/Data/Sites/1/skins/default/js/custom.huy.js"></script>
 	</form>
 </body>
 

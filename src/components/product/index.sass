@@ -152,6 +152,7 @@
 			// display: inline
 			.nav-item
 				border-right: 1px solid #e0e0e0
+
 .product-wrapper
 	padding: 80px 0
 	.title
@@ -165,30 +166,67 @@
 			max-width: 33.3333%
 			padding: 0 10px
 	.product-image
-		flex: 0 0 33.3333%
-		max-width: 33.3333%
-		margin-left: 8.3333%
+		flex: 0 0 calc(50% - 120px)
+		max-width: calc(50% - 120px)
+		margin: 0 auto
+		position: relative
 		padding: 0 10px
+		.swiper-nav
+			.btn-prev
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 100%
+				&:focus
+					outline: none
+				&:before
+					content: '\f141'
+					font-family: 'Material Design Icons'
+					font-size: 60px
+					color: rgba(black,.05)
+					cursor: pointer
+					text-shadow: 0 0 1px #aaa
+
+			.btn-next
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				left: 100%
+				&:focus
+					outline: none
+				&:before
+					content: '\f142'
+					font-family: 'Material Design Icons'
+					font-size: 60px
+					color: rgba(black,.05)
+					cursor: pointer
+					text-shadow: 0 0 1px #aaa
 		.big
-			margin-bottom: 15px
-			.slide
-				display: none
-		.thumbnail
-			max-width: 375px
-			margin: 0 auto
+			border: 1px solid rgba(black,.1)
+			position: relative
+			z-index: 0
 			.swiper-slide
-				padding: 0 10px
-				cursor: pointer
+				overflow: hidden
 				img
-					transition: all .5s ease-out
-					border: 1px solid transparent
-			.swiper-slide-active
-				img
-					border: 1px solid rgba(0, 0, 0, 0.1)
+					width: 100%
+
+			// .slide
+		// 		display: none
+		// .thumbnail
+		// 	max-width: 375px
+		// 	margin: 0 auto
+		// 	.swiper-slide
+		// 		padding: 0 10px
+		// 		cursor: pointer
+		// 		img
+		// 			transition: all .5s ease-out
+		// 			border: 1px solid transparent
+		// 	.swiper-slide-active
+		// 		img
+		// 			border: 1px solid rgba(0, 0, 0, 0.1)
 	.product-info
-		flex: 0 0 41.6666%
-		max-width: 41.6666%
-		margin-left: 16.6666%
+		flex: 0 0 50%
+		max-width: 50%
 		padding: 0 10px
 		.title
 			margin-bottom: 12px
@@ -357,7 +395,11 @@
 		.product-other
 			padding-top: 40px
 			margin-top: 40px
-
+		.product-image
+			.swiper-nav
+				.btn-prev,.btn-next
+					&:before
+						color: #333333
 @media (max-width: 767.9px)
 	.product-wrapper
 		.ajaxresponsewrap
@@ -370,13 +412,16 @@
 			margin-left: 0%
 			margin-top: 15px
 			order: 2
-			.thumbnail
-				max-width: 375px
-				width: 100%
+			padding: 0 60px
 			.big
-				max-width: 400px
 				width: 100%
-				margin: 0 auto 15px auto
+			.swiper-nav
+				.btn-prev
+					right: unset
+					left: 0
+				.btn-next
+					left: unset
+					right: 0
 		.product-info
 			order: 1
 			flex: 0 0 100%
@@ -398,9 +443,10 @@
 @media (max-width: 575.9px)
 	.product-wrapper
 		.product-image
+			padding: 0 60px
 			.big
-				max-width: 200px
 				border: 1px solid rgba(0, 0, 0, 0.1)
+				margin: 0 auto
 @media (max-width: 450px)
 	.product-wrapper
 		.product-info

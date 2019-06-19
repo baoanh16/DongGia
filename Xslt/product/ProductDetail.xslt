@@ -12,11 +12,15 @@
 							<xsl:apply-templates select="/ProductDetail/ProductImages" mode="BigImages"></xsl:apply-templates>
 						</div>
 					</div>
-					<div class="swiper-container thumbnail">
+						<div class="swiper-nav">
+							<span class="btn-prev mdi mdi-chevron-left"></span>
+							<span class="btn-next mdi mdi-chevron-right"></span>
+						</div>
+					<!-- <div class="swiper-container thumbnail">
 						<div class="swiper-wrapper">
 							<xsl:apply-templates select="/ProductDetail/ProductImages" mode="SmallImages"></xsl:apply-templates>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="product-info">
 					<div class="row no-gutters">
@@ -161,13 +165,13 @@
 					<xsl:value-of select="Title"></xsl:value-of>
 				</xsl:attribute>
 				<xsl:attribute name="data-zoom-image">
-					<xsl:value-of disable-output-escaping="yes" select="ThumbnailUrl"></xsl:value-of>
+					<xsl:value-of disable-output-escaping="yes" select="ImageUrl"></xsl:value-of>
 				</xsl:attribute>
 			</img>
 		</div>
 	</xsl:template>
 	<xsl:template match="ProductImages" mode="SmallImages">
-		<div class="swiper-slide" data-target="sl-1">
+		<div class="swiper-slide">
 			<img>
 				<xsl:attribute name="src">
 					<xsl:value-of select="ImageUrl"></xsl:value-of>

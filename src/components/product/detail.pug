@@ -2,28 +2,25 @@
 	.container
 		.row
 			.product-image
-				.big
-					.slide(data-id="sl-1" style="display:block")
-						img(src="./img/product/p_1.png", alt="")
-					.slide(data-id="sl-2")
-						img(src="./img/product/p_2.png", alt="")
-					.slide(data-id="sl-3")
-						img(src="./img/product/p_3.png", alt="")
-					.slide(data-id="sl-4")
-						img(src="./img/product/p_4.png", alt="")
-					.slide(data-id="sl-5")
-						img(src="./img/product/p_5.png", alt="")
+				.swiper-container.big
+					.swiper-wrapper
+						.swiper-slide
+							img(src="./img/product/p_2.png", alt="")
+						.swiper-slide
+							img(src="./img/product/p_3.png", alt="")
+						.swiper-slide
+							img(src="./img/product/p_4.png", alt="")
+						.swiper-slide
+							img(src="./img/product/p_5.png", alt="")
 				.swiper-container.thumbnail
 					.swiper-wrapper
-						.swiper-slide(data-target="sl-1")
-							img(src="./img/product/p_1.png", alt="")
-						.swiper-slide(data-target="sl-2")
+						.swiper-slide
 							img(src="./img/product/p_2.png", alt="")
-						.swiper-slide(data-target="sl-3")
+						.swiper-slide
 							img(src="./img/product/p_3.png", alt="")
-						.swiper-slide(data-target="sl-4")
+						.swiper-slide
 							img(src="./img/product/p_4.png", alt="")
-						.swiper-slide(data-target="sl-5")
+						.swiper-slide
 							img(src="./img/product/p_5.png", alt="")
 			.product-info
 				h1.title Half-moon Tea Set
