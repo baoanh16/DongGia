@@ -313,7 +313,7 @@ $(document).ready(function () {
 		// })
 		var productBig = new Swiper('.product-image .big', {
 			slidesPerView: 1,
-			speed: 1200,
+			speed: 500,
 			loop: true,
 			loopedSlides: 5,
 			effect: "fade",

@@ -154,7 +154,7 @@
 				border-right: 1px solid #e0e0e0
 
 .product-wrapper
-	padding: 80px 0
+	padding: 30px 0 60px 0
 	.title
 		font-size: 35px
 		font-weight: 400
@@ -166,8 +166,8 @@
 			max-width: 33.3333%
 			padding: 0 10px
 	.product-image
-		flex: 0 0 calc(50% - 120px)
-		max-width: calc(50% - 120px)
+		flex: 0 0 50%
+		max-width: 50%
 		margin: 0 auto
 		position: relative
 		padding: 0 10px
@@ -176,7 +176,8 @@
 				position: absolute
 				top: 50%
 				transform: translateY(-50%)
-				right: 100%
+				left: 0
+				z-index: 1
 				&:focus
 					outline: none
 				&:before
@@ -186,12 +187,12 @@
 					color: rgba(black,.05)
 					cursor: pointer
 					text-shadow: 0 0 1px #aaa
-
 			.btn-next
 				position: absolute
 				top: 50%
 				transform: translateY(-50%)
-				left: 100%
+				right: 0
+				z-index: 1
 				&:focus
 					outline: none
 				&:before

@@ -165,7 +165,7 @@
 					<xsl:value-of select="Title"></xsl:value-of>
 				</xsl:attribute>
 				<xsl:attribute name="data-zoom-image">
-					<xsl:value-of disable-output-escaping="yes" select="ImageUrl"></xsl:value-of>
+					<xsl:value-of disable-output-escaping="yes" select="ThumbnailUrl"></xsl:value-of>
 				</xsl:attribute>
 			</img>
 		</div>
