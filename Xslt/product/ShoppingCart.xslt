@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:msxsl="urn:schemas-microsoft-com:xslt"
  exclude-result-prefixes="msxsl">
 	<xsl:output method="html" indent="yes" />
-
 	<xsl:template match="/">
 		<xsl:choose>
 			<xsl:when test="count(/ShoppingCart/CartItem)=0">
@@ -31,21 +32,37 @@
 					<div class="col">
 						<h3>
 							<span class="fas fa-shopping-cart"></span>
-							<span><xsl:value-of select="/ShoppingCart/YourBagText" disable-output-escaping="yes"></xsl:value-of> (</span>
-							<span><xsl:value-of select="/ShoppingCart/TotalProducts"></xsl:value-of> </span><span><xsl:value-of select="/ShoppingCart/CartProductText" disable-output-escaping="yes"></xsl:value-of>)</span>
+							<span>
+								<xsl:value-of select="/ShoppingCart/YourBagText" disable-output-escaping="yes"></xsl:value-of>
+								<xsl:text disable-output-escaping="yes">(</xsl:text>
+							</span>
+							<span>
+								<xsl:value-of select="/ShoppingCart/TotalProducts"></xsl:value-of>
+							</span>
+							<span>
+								<xsl:value-of select="/ShoppingCart/CartProductText" disable-output-escaping="yes"></xsl:value-of>
+								<xsl:text disable-output-escaping="yes">)</xsl:text>
+							</span>
 						</h3>
 					</div>
 				</div>
-
 				<div class="row cart-table-list">
 					<div class="col">
 						<table>
 							<thead>
 								<tr>
-									<th><xsl:value-of select="/ShoppingCart/CartProductText" disable-output-escaping="yes"></xsl:value-of></th>
-									<th><xsl:value-of select="/ShoppingCart/PriceText" disable-output-escaping="yes"></xsl:value-of></th>
-									<th><xsl:value-of select="/ShoppingCart/QuantityText" disable-output-escaping="yes"></xsl:value-of></th>
-									<th><xsl:value-of select="/ShoppingCart/TotalText" disable-output-escaping="yes"></xsl:value-of></th>
+									<th>
+										<xsl:value-of select="/ShoppingCart/CartProductText" disable-output-escaping="yes"></xsl:value-of>
+									</th>
+									<th>
+										<xsl:value-of select="/ShoppingCart/PriceText" disable-output-escaping="yes"></xsl:value-of>
+									</th>
+									<th>
+										<xsl:value-of select="/ShoppingCart/QuantityText" disable-output-escaping="yes"></xsl:value-of>
+									</th>
+									<th>
+										<xsl:value-of select="/ShoppingCart/TotalText" disable-output-escaping="yes"></xsl:value-of>
+									</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -54,43 +71,35 @@
 						</table>
 					</div>
 				</div>
-
 				<div class="row cart-total-price">
 					<div class="col">
-						<p><span><xsl:value-of select="/ShoppingCart/TotalText" disable-output-escaping="yes"></xsl:value-of>: </span>
+						<p class="weight">
+							<xsl:text>Taotal Weight : </xsl:text>
+							<xsl:value-of select="/ShoppingCart/TotalWeight" disable-output-escaping="yes"></xsl:value-of>
+							<xsl:text> gram</xsl:text>
+						</p>
+						<p>
+							<span>
+								<xsl:value-of select="/ShoppingCart/TotalText" disable-output-escaping="yes"></xsl:value-of>
+								<xsl:text disable-output-escaping="yes">: </xsl:text>
+							</span>
 							<strong class="price-temp">
 								<xsl:value-of select="/ShoppingCart/SubTotal"></xsl:value-of>
 							</strong>
 						</p>
-						<!-- <p><span>Phí vận chuyển:</span>
-							<strong class="price-shipping">
-								<xsl:value-of select="/ShoppingCart/ShippingTotal"></xsl:value-of>
-							</strong>
-						</p>
-						<p><span>Giảm giá:</span>
-							<strong class="price-reduce">
-								<xsl:value-of select="/ShoppingCart/DiscountTotal"></xsl:value-of>
-							</strong>
-						</p>
+						<!-- <p><span>Phí vận chuyển:</span><strong class="price-shipping"><xsl:value-of select="/ShoppingCart/ShippingTotal"></xsl:value-of></strong></p><p><span>Giảm giá:</span><strong class="price-reduce"><xsl:value-of select="/ShoppingCart/DiscountTotal"></xsl:value-of></strong></p><p><span>Tổng tiền:</span><strong><xsl:value-of select="/ShoppingCart/Total"></xsl:value-of></strong></p> -->
 						<p>
-							<span>Tổng tiền:</span>
-							<strong>
-								<xsl:value-of select="/ShoppingCart/Total"></xsl:value-of>
-							</strong>
-						</p> -->
-						<p><xsl:value-of select="/ShoppingCart/NotIncludeTaxText" disable-output-escaping="yes"></xsl:value-of></p>
+							<xsl:value-of select="/ShoppingCart/NotIncludeTaxText" disable-output-escaping="yes"></xsl:value-of>
+						</p>
 					</div>
 				</div>
-
 				<div class="cart-button-checkout">
 					<xsl:if test="/ShoppingCart/ContinueShoppingUrl!=''">
-						<a class="btn btn-prev">
-							<xsl:attribute name="href">
-								<xsl:value-of select="/ShoppingCart/ContinueShoppingUrl"></xsl:value-of>
-							</xsl:attribute>
+						<a class="btn btn-prev" href="/">
 							<span class="mdi mdi-chevron-left"></span>
 							<span>
-							<xsl:value-of select="/ShoppingCart/ContinueShoppingText"></xsl:value-of></span>
+								<xsl:value-of select="/ShoppingCart/ContinueShoppingText"></xsl:value-of>
+							</span>
 						</a>
 					</xsl:if>
 					<a class="btn btn-next">
@@ -107,9 +116,7 @@
 				</div>
 			</xsl:otherwise>
 		</xsl:choose>
-
 	</xsl:template>
-
 	<xsl:template match="CartItem">
 		<tr>
 			<td>
@@ -122,12 +129,12 @@
 							<xsl:value-of select="target"></xsl:value-of>
 						</xsl:attribute>
 						<img>
-						<xsl:attribute name="src">
-							<xsl:value-of select="ThumbnailUrl"></xsl:value-of>
-						</xsl:attribute>
-						<xsl:attribute name="alt">
-							<xsl:value-of select="Title"></xsl:value-of>
-						</xsl:attribute>
+							<xsl:attribute name="src">
+								<xsl:value-of select="ThumbnailUrl"></xsl:value-of>
+							</xsl:attribute>
+							<xsl:attribute name="alt">
+								<xsl:value-of select="Title"></xsl:value-of>
+							</xsl:attribute>
 						</img>
 					</a>
 					<figcaption>
@@ -142,6 +149,10 @@
 						<p>
 							<xsl:value-of select="Code" disable-output-escaping="yes"></xsl:value-of>
 						</p>
+						<p class="weight">
+							<xsl:value-of select="Weight" disable-output-escaping="yes"></xsl:value-of>
+							<xsl:text> gram</xsl:text>
+						</p>
 						<xsl:apply-templates select="Attributes"></xsl:apply-templates>
 					</figcaption>
 				</figure>
@@ -154,34 +165,25 @@
 						<!-- <xsl:text>Bỏ sản phẩm</xsl:text> -->
 						<!--<xsl:value-of select="/ShoppingCart/RemoveText"></xsl:value-of>-->
 					</a>
-					<!-- <a class="loveit" onclick="AjaxCart.carttowishlist(this);return false;">
-						<xsl:attribute name="data-itemguid">
-							<xsl:value-of select="ItemGuid"></xsl:value-of>
-						</xsl:attribute>
-						<i class="fa fa-heart" aria-hidden="true"></i>
-						<xsl:text> </xsl:text>
-						<xsl:text>Để dành mua sau</xsl:text>
-					</a> -->
+					<!-- <a class="loveit" onclick="AjaxCart.carttowishlist(this);return false;"><xsl:attribute name="data-itemguid"><xsl:value-of select="ItemGuid"></xsl:value-of></xsl:attribute><i class="fa fa-heart" aria-hidden="true"></i><xsl:text></xsl:text><xsl:text>Để dành mua sau</xsl:text></a> -->
 				</div>
 			</td>
 			<td>
 				<div class="price-wrap">
-				<div class="new">
-					<xsl:value-of select="OriginalPrice"></xsl:value-of>
-				</div>
-				<!-- <xsl:if test="OldPrice !=''">
-					(<del class="old">
-						<xsl:value-of select="OldPrice"></xsl:value-of>
-					</del>)
-				</xsl:if> -->
-				<xsl:if test="OldPrice !=''">
-					<div class="sale">
-						<xsl:text>(Giảm </xsl:text>
-						<xsl:value-of select="ItemPercent" disable-output-escaping="yes"></xsl:value-of>
-						<xsl:text>%)</xsl:text>
-						<!-- <xsl:value-of select="DiscountPercentage"></xsl:value-of> -->
+					<div class="new">
+						<xsl:value-of select="OriginalPrice"></xsl:value-of>
 					</div>
-				</xsl:if>
+					<!-- <xsl:if test="OldPrice !=''">
+					(<del class="old"><xsl:value-of select="OldPrice"></xsl:value-of></del>)
+				</xsl:if> -->
+					<xsl:if test="OldPrice !=''">
+						<div class="sale">
+							<xsl:text>(Giảm </xsl:text>
+							<xsl:value-of select="ItemPercent" disable-output-escaping="yes"></xsl:value-of>
+							<xsl:text>%)</xsl:text>
+							<!-- <xsl:value-of select="DiscountPercentage"></xsl:value-of> -->
+						</div>
+					</xsl:if>
 				</div>
 			</td>
 			<td>
@@ -190,13 +192,13 @@
 					<!-- <input class="quantity-number" type="text" value="1"> -->
 					<!-- <input type="text" maxlength="10" class="quantity-number qty-input" onchange="AjaxCart.updatecart();return false;"> -->
 					<input type="text" maxlength="10" class="quantity-number qty-input" onchange="AjaxCart.updatecart();return false;">
-					<xsl:attribute name="name">
-						<xsl:text>itemquantity</xsl:text>
-						<xsl:value-of select="ItemGuid"></xsl:value-of>
-					</xsl:attribute>
-					<xsl:attribute name="value">
-						<xsl:value-of select="Quantity"></xsl:value-of>
-					</xsl:attribute>
+						<xsl:attribute name="name">
+							<xsl:text>itemquantity</xsl:text>
+							<xsl:value-of select="ItemGuid"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="value">
+							<xsl:value-of select="Quantity"></xsl:value-of>
+						</xsl:attribute>
 					</input>
 					<span class="plus">+</span>
 				</div>
@@ -206,50 +208,20 @@
 			</td>
 		</tr>
 	</xsl:template>
-
-  <xsl:template match="Attributes">
-    <div class="size">
-      <xsl:value-of select="Title"></xsl:value-of>
-      <xsl:text>: </xsl:text>
-      <xsl:apply-templates select="Options"></xsl:apply-templates>
-    </div>
-  </xsl:template>
-  <xsl:template match="Options">
-    <xsl:if test="IsActive='true'">
-      <xsl:value-of select="Title"></xsl:value-of>
-    </xsl:if>
-  </xsl:template>
-	<!-- <xsl:template match="CartItem" mode="Gifts">
-		<xsl:if test="GiftDescription!=''">
-			<div class="row flex flex-wrap">
-				<xsl:value-of select="GiftDescription" disable-output-escaping="yes"></xsl:value-of>
-			</div>
-		</xsl:if>
-	</xsl:template> -->
-
-	<!-- <xsl:template match="Quantities">
-		<option>
-			<xsl:attribute name="value">
-				<xsl:value-of select="Quantity"></xsl:value-of>
-			</xsl:attribute>
-			<xsl:value-of select="Quantity"></xsl:value-of>
-		</option>
-	</xsl:template> -->
-
-	<!-- <xsl:template match="Attributes">
-		<div class="productsize">
+	<xsl:template match="Attributes">
+		<div class="size">
 			<xsl:value-of select="Title"></xsl:value-of>
 			<xsl:text>: </xsl:text>
-			<strong>
-				<xsl:apply-templates select="Options"></xsl:apply-templates>
-			</strong>
+			<xsl:apply-templates select="Options"></xsl:apply-templates>
 		</div>
-	</xsl:template> -->
-
-	<!-- <xsl:template match="Options">
+	</xsl:template>
+	<xsl:template match="Options">
 		<xsl:if test="IsActive='true'">
 			<xsl:value-of select="Title"></xsl:value-of>
 		</xsl:if>
-	</xsl:template> -->
-
+	</xsl:template>
+	<!-- <xsl:template match="CartItem" mode="Gifts"><xsl:if test="GiftDescription!=''"><div class="row flex flex-wrap"><xsl:value-of select="GiftDescription" disable-output-escaping="yes"></xsl:value-of></div></xsl:if></xsl:template> -->
+	<!-- <xsl:template match="Quantities"><option><xsl:attribute name="value"><xsl:value-of select="Quantity"></xsl:value-of></xsl:attribute><xsl:value-of select="Quantity"></xsl:value-of></option></xsl:template> -->
+	<!-- <xsl:template match="Attributes"><div class="productsize"><xsl:value-of select="Title"></xsl:value-of><xsl:text>: </xsl:text><strong><xsl:apply-templates select="Options"></xsl:apply-templates></strong></div></xsl:template> -->
+	<!-- <xsl:template match="Options"><xsl:if test="IsActive='true'"><xsl:value-of select="Title"></xsl:value-of></xsl:if></xsl:template> -->
 </xsl:stylesheet>

@@ -82,8 +82,15 @@
 					</tr>
 					<tr class="amount shipping">
 						<td><xsl:value-of select="/ShoppingCart/ShippingText"></xsl:value-of></td>
-						<td>
+						<td class="shipping-total">
 							<xsl:value-of select="/ShoppingCart/ShippingTotal"></xsl:value-of>
+						</td>
+					</tr>
+					<tr class="amount shipping">
+						<td>Total Weight</td>
+						<td>
+							<xsl:value-of select="/ShoppingCart/TotalWeight"></xsl:value-of>
+									<xsl:text> gram</xsl:text>
 						</td>
 					</tr>
 					<tr class="amount price">
@@ -153,13 +160,17 @@
 				<p class="price">
 					<xsl:value-of select="OldPrice"></xsl:value-of>
 				</p>
-				<p> <span>x </span>
+
+				<p class="total-price">
+					<xsl:value-of select="OriginalPrice"></xsl:value-of>
+				</p>
+				<p class="">
+					<xsl:value-of select="Weight"></xsl:value-of>
+									<xsl:text> gram </xsl:text>
+				</p><p> <span>x </span>
 					<span class="quantity">
 						<xsl:value-of select="Quantity"></xsl:value-of>
 					</span></p>
-				<p class="total-price">
-					<xsl:value-of select="ItemTotal"></xsl:value-of>
-				</p>
 			</td>
 		</tr>
 
